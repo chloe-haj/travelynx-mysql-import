@@ -5,6 +5,7 @@ require ("mysqli_connect.php");
 $history = shell_exec("curl -s -b cookies.txt https://travelynx.de/history.csv");
 
 $history = preg_replace_callback('/([^"]*)("((""|[^"])*)"|$)/s', function ($matches) {
+    $str = "";
     if (isset($matches[3])) {
         $str = str_replace("\r", "\rR", $matches[3]);
         $str = str_replace("\n", "\rN", $str);
