@@ -1,4 +1,4 @@
-# php script t o automatically export travelynx journeys to a mysql database 
+# php script to automatically export travelynx journeys to a mysql database 
 
 the script can be run as a cronjob 
 
