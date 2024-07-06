@@ -10,7 +10,7 @@ normally it should not produce a output
 
 ## installation
 1. rename `mysql_userdata_example.php` to `mysql_userdata.php` and fill the required fields
-2. either create a table named `travelynx` or change `$tablename` to the table where the data should be stored
+2. create a table using the `create_table.sql` or follow the structure given
 3. export your cookies for [travelynx.de](https://travelynx.de) as a netscape cookies.txt file and place it in the same directory as `cronjob.php` 
 4. either run `php cronjob.php` or add it to your crontab
 > The script must be run in the directory where the `cookies.txt` is located so `cd` into it before running 
