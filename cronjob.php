@@ -1,6 +1,4 @@
 <?php
-//set the table where the data should be safed 
-$table = "travelynx";
 //connect to the database
 require ("mysqli_connect.php");
 //download the history.csv
