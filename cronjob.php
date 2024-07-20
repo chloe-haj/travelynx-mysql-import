@@ -5,9 +5,13 @@ require ("mysqli_connect.php");
 #$history = shell_exec("curl -s -b cookies.txt https://travelynx.de/history.csv");
 $travel_csv = curl_init("https://travelynx.de/history.csv");
 
-if (!curl_setopt_array($travel_csv, array(
-    CURLOPT_COOKIEFILE => "cookies.txt",
-    CURLOPT_RETURNTRANSFER => true))){
+if (
+    !curl_setopt_array($travel_csv, array(
+        CURLOPT_COOKIEFILE => "cookies.txt",
+        CURLOPT_RETURNTRANSFER => true
+    )
+    )
+) {
     file_put_contents(
         "logfile.txt",
         "fatal Error: failed to set cUrl options"

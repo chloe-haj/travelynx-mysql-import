@@ -5,8 +5,7 @@ the script can be run as a cronjob
 normally it should not produce a output 
 
 ## dependencies 
-- php 8.1+ with enabled mysqli extension 
-- curl 
+- php 8.1+ with enabled mysqli & curl extension  
 
 ## installation
 1. rename `mysql_userdata_example.php` to `mysql_userdata.php` and fill the required fields
