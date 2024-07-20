@@ -2,7 +2,20 @@
 //connect to the database
 require ("mysqli_connect.php");
 //download the history.csv
-$history = shell_exec("curl -s -b cookies.txt https://travelynx.de/history.csv");
+#$history = shell_exec("curl -s -b cookies.txt https://travelynx.de/history.csv");
+$travel_csv = curl_init("https://travelynx.de/history.csv");
+
+if (!curl_setopt_array($travel_csv, array(
+    CURLOPT_COOKIEFILE => "cookies.txt",
+    CURLOPT_RETURNTRANSFER => true))){
+    file_put_contents(
+        "logfile.txt",
+        "fatal Error: failed to set cUrl options"
+    );
+    die("fatal Error: failed to set cUrl options");
+}
+
+$history = curl_exec($travel_csv);
 
 if (str_starts_with($history, 'Zugtyp,Linie,Nummer,Start,Ziel,"Start (DS100)","Ziel (DS100)","Abfahrt (soll)","Abfahrt (ist)","Ankunft (soll)","Ankunft (ist)",Kommentar,ID')) {
     //escape everything surrounded by double quotes 
