@@ -20,7 +20,7 @@ if (
 }
 
 $history = curl_exec($travel_csv);
-
+ //TODO: make error handling work with the php curl plugin 
 if (str_starts_with($history, 'Zugtyp,Linie,Nummer,Start,Ziel,"Start (DS100)","Ziel (DS100)","Abfahrt (soll)","Abfahrt (ist)","Ankunft (soll)","Ankunft (ist)",Kommentar,ID')) {
     //escape everything surrounded by double quotes 
     $history = preg_replace_callback('/([^"]*)("((""|[^"])*)"|$)/s', function ($matches) {
@@ -66,5 +66,5 @@ if (str_starts_with($history, 'Zugtyp,Linie,Nummer,Start,Ziel,"Start (DS100)","Z
         "logfile.txt",
         "fatal Error: received File is not a travelynx csv export \n If you see a html webpage your login cookie has most likely expired \n recreate the cookies.txt to resolve \n Data received: \n" . $history
     );
-    die("fatal Error: received file is not a travelynx csv export \n check logfile.txt for more details");
+    die("fatal Error: received File is not a travelynx csv export \n If you see a html webpage your login cookie has most likely expired \n recreate the cookies.txt to resolve \n Data received: \n" . $history ."\n This error message has also been saved to logfile.txt");
 }
