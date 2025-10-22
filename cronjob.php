@@ -21,7 +21,7 @@ if (
 
 $history = curl_exec($travel_csv);
  //TODO: make error handling work with the php curl plugin 
-if (str_starts_with($history, 'Zugtyp,Linie,Nummer,Start,Ziel,"Start (DS100)","Ziel (DS100)","Abfahrt (soll)","Abfahrt (ist)","Ankunft (soll)","Ankunft (ist)",Kommentar,ID')) {
+if (str_starts_with($history, 'type,line,number,"departure stop name","departure stop id","arrival stop name","arrival stop id","scheduled departure","real-time departure","scheduled arrival","real-time arrival",operator,"carriage type",comment,id')) {
     //escape everything surrounded by double quotes 
     $history = preg_replace_callback('/([^"]*)("((""|[^"])*)"|$)/s', function ($matches) {
         $str = "";
