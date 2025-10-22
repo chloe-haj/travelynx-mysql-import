@@ -28,19 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `travelynx` (
-  `Zugtyp` varchar(6) DEFAULT NULL,
-  `Linie` varchar(5) DEFAULT NULL,
-  `Nummer` varchar(6) DEFAULT NULL,
-  `Start` text DEFAULT NULL,
-  `Ziel` text DEFAULT NULL,
-  `Start (DS100)` varchar(5) DEFAULT NULL,
-  `Ziel (DS100)` varchar(5) DEFAULT NULL,
-  `Abfahrt (soll)` varchar(16) DEFAULT NULL,
-  `Abfahrt (ist)` varchar(16) DEFAULT NULL,
-  `Ankunft (soll)` varchar(16) DEFAULT NULL,
-  `Ankunft (ist)` varchar(16) DEFAULT NULL,
-  `Kommentar` text DEFAULT NULL,
-  `ID` int(6) DEFAULT NULL
+  `type` varchar(6) DEFAULT NULL,
+  `line` varchar(5) DEFAULT NULL,
+  `number` varchar(6) DEFAULT NULL,
+  `departure stop name` text DEFAULT NULL,
+  `departure stop id` varchar(9) DEFAULT NULL,
+  `arrival stop name` text DEFAULT NULL,
+  `arrival stop id` varchar(9) DEFAULT NULL,
+  `scheduled departure` varchar(16) DEFAULT NULL,
+  `real-time departure` varchar(16) DEFAULT NULL,
+  `scheduled arrival` varchar(16) DEFAULT NULL,
+  `real-time arrival` varchar(16) DEFAULT NULL,
+  `operator` text DEFAULT NULL,
+  `carriage type` text DEFAULT NULL,
+  `comment` text DEFAULT NULL,
+  `id` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
