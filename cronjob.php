@@ -54,7 +54,7 @@ if (str_starts_with($history, 'type,line,number,"departure stop name","departure
     );
     unset($row); //$row is no longer needed so we destroy it
 //create a string of placeholders for the query 
-    $place_holders = implode(',', array_fill(1, 13, '?'));
+    $place_holders = implode(',', array_fill(1, 15, '?'));
     //prepare the query 
     $query = $conn->prepare("INSERT IGNORE INTO `$table` VALUES ($place_holders)");
     //add each journey to the database 
